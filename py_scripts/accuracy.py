@@ -41,7 +41,6 @@ if __name__=='__main__':
     file = sys.argv[1]
     th = float(sys.argv[2])   #trashold
     confusion = get_confusion(file,th)
-    print(confusion)
     acc = get_accuracy(confusion)
     mcc = get_mcc(confusion)
     print ("TH:",th,"Accuracy:",acc,"MCC:",mcc,"TN:",confusion[0,0],"FN:",confusion[0,1], "FP:",confusion[1,0], "TP:",confusion[1,1])
