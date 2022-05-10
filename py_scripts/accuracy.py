@@ -33,7 +33,7 @@ def get_accuracy(cm):
 
 def get_mcc(cm):
     '''Matthew correlation coefficient'''
-    n = cm[0,0]*cm[1,1]-cm[0,1]*[1,0]   #numerator
+    n = cm[0,0]*cm[1,1]-cm[0,1]*cm[1,0]   #numerator
     d = np.sqrt((cm[0,0]+cm[1,1])*(cm[0,0]+cm[0,1]) * (cm[1,1]+cm[0,1])*(cm[1,1]+cm[1,0])) #denominator
     return n/d
 
@@ -44,4 +44,4 @@ if __name__=='__main__':
     print(confusion)
     acc = get_accuracy(confusion)
     mcc = get_mcc(confusion)
-    print ("TH:",th,"Q2:",get_accuracy(confusion),"MCC:",get_mcc(confusion),"TN:",confusion[0,0],"fN:",confusion[0,1], "FP:",confusion[1,0], "TP:",confusion[1,1])
+    print ("TH:",th,"Accuracy:",acc,"MCC:",mcc,"TN:",confusion[0,0],"FN:",confusion[0,1], "FP:",confusion[1,0], "TP:",confusion[1,1])
